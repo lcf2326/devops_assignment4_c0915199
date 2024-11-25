@@ -1,0 +1,47 @@
+name: Flask CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Or your primary branch name
+  pull_request:
+    branches:
+      - main  # Or your primary branch name
+s
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  # Specify the version of Python you're using
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv  # Create a virtual environment
+        source venv/bin/activate  # Activate the virtual environment
+        pip install --upgrade pip  # Upgrade pip to avoid installation issues
+        pip install -r requirements.txt  # Install project dependencies
+
+    - name: Set up MongoDB
+      run: |
+        sudo apt-get update  # Ensure we have the latest package list
+        sudo apt-get install -y mongodb  # Install MongoDB
+        sudo service mongodb start  # Start the MongoDB service
+        mongo --eval 'db.runCommand({ connectionStatus: 1 })'  # Check the MongoDB connection
+
+    - name: Run Unit Tests
+      run: |
+        source venv/bin/activate  # Activate the virtual environment
+        python -m unittest discover tests/  # Discover and run the tests in the 'tests/' directory
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: test-results.xml  # Path to the test results (if you have configured your test output to XML)
