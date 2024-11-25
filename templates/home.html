@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Style Studio Clothing Store{% endblock %}
+
+{% block content %}
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="display-4">Welcome to Style Studio</h1>
+                <p class="lead">Discover the latest fashion trends for every season.</p>
+                <a href="/products" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction-section py-5">
+        <div class="container">
+            <h2>About Our Store</h2>
+            <p>At Style Studio, we believe fashion should be accessible to everyone. Whether you're looking for casual wear, formal attire, or the latest trends, we have something for everyone.</p>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Products</h2>
+            <div class="row">
+                <!-- Example Product Cards -->
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <img src="{% static 'images/product1.jpg' %}" class="card-img-top" alt="Product 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Product Name 1</h5>
+                            <p class="card-text">$49.99</p>
+                            <a href="/products/1" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional product cards can be duplicated as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta-section py-5 text-white text-center" style="background-color: #324072;">
+        <div class="container">
+            <h2>Stay Ahead with Exclusive Offers</h2>
+            <p>Sign up for our newsletter to get early access to our latest collections and exclusive discounts!</p>
+            <a href="/signup" class="btn btn-light">Sign Up Now</a>
+        </div>
+    </section>
+{% endblock %}

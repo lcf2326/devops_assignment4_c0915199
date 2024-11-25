@@ -1,0 +1,72 @@
+/* Logo */
+.navbar-brand img {
+    height: auto;
+    max-width: 200px;
+}
+
+
+/* Banner styling */
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-image: url('../images/banner.jpg');
+}
+
+.banner .display-4 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.banner .lead {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+/* Introduction section styling */
+.introduction-section {
+    padding: 2rem 0;
+    background-color: #f8f9fa; 
+}
+
+.introduction-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.introduction-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Button */
+.btn {
+    background-color: #324072;
+    color: #fff;
+    padding: 12px 24px;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #324072;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #6c757d; 
+}
